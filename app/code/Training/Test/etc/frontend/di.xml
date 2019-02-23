@@ -21,4 +21,5 @@
             <!--</argument>-->
         <!--</arguments>-->
     <!--</type>-->
+    <preference for="Magento\Cms\Controller\Page\View" type="Training\Test\Controller\Page\View" />
 </config>
