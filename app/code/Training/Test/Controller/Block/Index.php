@@ -2,23 +2,25 @@
 
 namespace Training\Test\Controller\Block;
 
+use \Magento\Framework\Controller\Result\RawFactory;
+
 class Index extends \Magento\Framework\App\Action\Action
 {
-    private $layoutFactory;
+    private $rawFactory;
 
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\LayoutFactory $layoutFactory
+        RawFactory $rawFactory
     )
     {
-        $this->layoutFactory = $layoutFactory;
+        $this->rawFactory = $rawFactory;
         parent::__construct($context);
     }
 
     public function execute()
     {
-        $layout = $this->layoutFactory->create();
-        $block = $layout->createBlock('Training\Test\Block\Test');
-        $this->getResponse()->appendBody($block->toHtml());
+        $raw = $this->rawFactory->create();
+        $raw->setContents("<b>Hello world from block!</b>");
+        return $raw;
     }
 }
