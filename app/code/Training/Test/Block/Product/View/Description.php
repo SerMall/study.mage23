@@ -8,6 +8,8 @@ class Description
         \Magento\Catalog\Block\Product\View\Description $subject
     ) {
 //        $subject->getProduct()->setDescription('Test Description 333');
-        $subject->setTemplate('Training_Test::description.phtml');
+        if ($subject->getNameInLayout() == 'product.info.sku') {
+            $subject->setTemplate('Training_Test::description.phtml');
+        }
     }
 }
