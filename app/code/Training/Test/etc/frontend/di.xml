@@ -2,6 +2,10 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Block\Product\View\Description">
+        <plugin name="product_view_description_plugin" type="Training\Test\Block\Product\View\Description" sortOrder="10"/>
+    </type>
+
     <!--<type name="Magento\Framework\UrlInterface">-->
     <!--<plugin name="training_test" type="Training\Test\Plugin\Model\Url"/>-->
     <!--</type>-->
