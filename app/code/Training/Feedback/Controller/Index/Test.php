@@ -32,7 +32,7 @@ class Test extends \Magento\Framework\App\Action\Action
 //        $newFeedback->setIsActive(1);
 //        $this->feedbackRepository->save($newFeedback);
 
-        $feedback = $this->feedbackFactory->create()->load(8);
+        $feedback = $this->feedbackRepository->getById(16);
         $this->printFeedback($feedback);
 
         $feedback = $this->feedbackRepository->getById(10);
